@@ -29,7 +29,7 @@ k_aov <- function(data,n, p=0.01, method){
   output
 }
 
-cluster_analysis_new <- function(data, cluster_number, pvalue, number=50, method){
+cluster_analysis <- function(data, cluster_number, pvalue, number=50, method){
   i =1
   result <- k_aov(data = data,n=cluster_number,p=pvalue, method=method)
   #print(paste("first gene set number is ",ncol(result$table)))
