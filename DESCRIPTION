@@ -1,9 +1,9 @@
 Package: SAIC
 Type: Package
-Title: What the package does (short line)
+Title: Single cell RNA-seq data analysis
 Version: 1.0
 Date: 2016-11-01
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
+Author: Lu Yang, Xiwei Wu
+Maintainer: luyang@coh.org; xwu@coh.org
+Description: SAIC identifies the optimal set of signature genes to separate single cells into distinct groups.
 License: What license is it under?
