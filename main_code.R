@@ -21,8 +21,7 @@ k_aov <- function(data,n, p=0.01, method){
   dbs <- index.DB(data, as.integer(clust$cluster), centrotypes="centroids")[[1]]
   print(dbs)
   pValue<-sapply(1:ncol(data),function(i)summary(aov(gene~cl, data=data.frame(gene=data[,i],cl=as.character(clust$cluster))))[[1]][1,5])
-  FDR <- p.adjust(pValue, method = "fdr", n = length(pValue))
-  keep2 <- which(FDR<= p)
+  keep2 <- which(pValue<= p)
   data_table <- data[,keep2]
   print(paste("number of genes left is",ncol(data_table)))
   output <- list(dbScore=dbs,cluster=clust$cluster,table=data_table)
@@ -75,7 +74,6 @@ para_select <- function(data,cluster,pvalue, number, method="neuralgas"){
 		result1[j] <- NA
     #result1[j] <- paste(NA,result$dbScore,sep=".")
 	  }
-	  #write.table(result$cluster,paste("cluster_ij",i,"_",j,".txt",sep=""),sep="\t",col.names=NA)
     }
 	return(result1)
   }, mc.cores=length(cluster))
