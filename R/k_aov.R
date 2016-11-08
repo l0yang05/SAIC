@@ -1,12 +1,9 @@
 k_aov <-
 function(data,n, p=0.01, method){
-  require(clusterCrit)
   require(MASS)
-  require(edgeR)
   require(cclust)
-  require(cluster)
   require(clusterSim)
-  #print(method)
+
 
   if(method == "kmeans") {
 	  clust <- kmeans(data, n ,iter.max = 100,nstart = 100)
