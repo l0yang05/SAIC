@@ -4,7 +4,6 @@
 ## nstart of kmeans, use 100 random initaiations and return the optimum
 
 k_aov <- function(data,n, p=0.01, method){
-  require(clusterCrit)
   require(MASS)
   require(cclust)
   require(clusterSim)
